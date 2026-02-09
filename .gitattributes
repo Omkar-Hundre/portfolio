@@ -1,0 +1,4 @@
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+src/assets/project-demo/heimdall/heimdall-final.mp4 filter=lfs diff=lfs merge=lfs -text
+src/assets/project-demo/gorr/gorr-trim.mov filter=lfs diff=lfs merge=lfs -text
