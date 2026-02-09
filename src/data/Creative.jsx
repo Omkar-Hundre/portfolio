@@ -1,10 +1,5 @@
 import TN1 from "../assets/Creative/TN1.jpg";
-import TN2 from "../assets/Creative/TN2.png";
 import TN3 from "../assets/Creative/TN3.png";
-import PS1 from "../assets/Creative/PS1.png";
-import PS2 from "../assets/Creative/PS2.png";
-import PS3 from "../assets/Creative/PS3.png";
-import PS4 from "../assets/Creative/PS4.png";
 
 export const creative = [
   {
@@ -34,7 +29,7 @@ export const creative = [
     description: "Second short film project with focus on visual effects and creative storytelling. Handeled the lead role and helped in cinematography.",
     media: {
       type: "video",
-      thumbnail: TN2,
+      thumbnail: TN3,
       videoUrl: "https://youtu.be/tg_4ac73V_M?si=IgCaM6sITBFPPDrD",
       duration: "14:23"
     },
@@ -51,8 +46,8 @@ export const creative = [
     description: "Collection of digital artwork and design projects created using Photoshop. Includes poster designs, digital illustrations, and creative compositions.",
     media: {
       type: "gallery",
-      images: [PS1, PS2, PS3, PS4],
-      mainImage: PS1
+      images: [TN1, TN3],
+      mainImage: TN1
     },
     role: "Digital Artist & Designer",
     year: "2023-2024",

@@ -13,7 +13,6 @@ inks={project.links}
 import Zora1 from "../assets/project-demo/Zora/1.png";
 import Zora2 from "../assets/project-demo/Zora/2.png";
 import Zora3 from "../assets/project-demo/Zora/3.png";
-import Zora4 from "../assets/project-demo/Zora/4.png";
 
 // Bus Tracking System Screenshots
 import ss1 from "../assets/project-demo/BusTS/1.jpg";
@@ -48,7 +47,7 @@ export const PROJECTS = [
     id: "zorabase",
     title: "Zorabase",
     screenshots: [],
-    image: [Zora1, Zora2, Zora3, Zora4], // BusTS images
+    image: [Zora1, Zora2, Zora3], // BusTS images
     description: "Built a full-fledged Firebase alternative with real-time database, rules engine, and user authentication. Server supports up to 2000 concurrent users using multi-threading on dedicated hardware. Includes a full admin dashboard for monitoring users, data, and system metrics.",
     technologies: [
       "python",

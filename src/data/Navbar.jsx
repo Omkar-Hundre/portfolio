@@ -27,7 +27,7 @@ export const Contact = {
     },
     Twitter: {
       name: "Twitter",
-      url: "https://x.com/shivdutt059",
+      url: "https://x.com/omkar059",
       icon: Icons.x,
       navbar: false,
     },
