@@ -5,18 +5,34 @@ const EXPERIENCE = [
     company: "Autonoms Agency",
     href: "https://autonoms.vercel.app/",
     location: "Remote",
-    title: "Founder & Full Stack Engineer",
+    title: "Co-Founder & Technical Lead",
     logoUrl: Autonoms,
     start: "Sept 2024",
     end: "Present",
     description:
-      "Co-founded Autonoms, a digital agency specializing in modern web solutions and SEO optimization. Successfully acquired and onboarded 4 clients, delivering high-performance websites and comprehensive digital transformations. Led full-stack development using React/Next.js and Node.js. Managed end-to-end project deliveries.",
+      "Spearheaded technical roadmap for a digital agency, delivering enterprise-grade web solutions and performance-driven digital transformations. Architected high-conversion architectures resulting in significant revenue growth and average boost in organic SEO rankings for clients.",
     achievements: [
-      "Acquired 4 clients and generated ₹35K revenue",
-      "Delivered 4 complete website projects with 100% on-time delivery rate", 
-      "Improved client SEO rankings by average of 30% within 30 days",
-      "Built reusable component library reducing development time by 50%",
-      "Built a custom AI-powered quotation tool for hydraulic industries, reducing workflow time from days to minutes"
+      "Delivered 4+ enterprise-grade web solutions using Next.js and Node.js",
+      "Architected high-conversion landing pages",
+      "Achieved a 30% average boost in organic SEO rankings for clients within 30 days",
+      "Implemented automated CI/CD pipelines and performance monitoring, reducing site load times by 45%",
+      "Engineered an AI-powered quotation tool for hydraulic industries, reducing workflow from days to minutes"
+    ]
+  },
+  {
+    company: "Startup Labs",
+    href: "#",
+    location: "Remote",
+    title: "Software Developer (Independent Projects)",
+    logoUrl: null, // No logo provided in resume, but I can use a generic one if needed
+    start: "Jan 2023",
+    end: "Aug 2024",
+    description:
+      "Engineered distributed systems and AI-driven platforms for industrial and education sectors. Focused on high-performance backend architectures and real-time data synchronization.",
+    achievements: [
+      "Developed ThinkSoul LMS, optimizing backend logic to handle 400+ concurrent projects on a single-core VPS",
+      "Architected COSEM, an AI-integrated quotation engine for industrial setups, digitizing workflows for 3 major hydraulic firms",
+      "Collaborated on logistics supply-chain solutions, ranking 4th nationally in the InnovateX E-Summit at IIT Bombay"
     ]
   }
 ];

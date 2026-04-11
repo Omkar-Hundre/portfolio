@@ -7,29 +7,27 @@ export const creative = [
     title: "Short Film - Odessey 2K25",
     type: "Short Film",
     category: "Lead Actor",
-    description: "Worked on a short film project focusing on storytelling and visual narrative. Contributed to the wise cause of Sustainable Development Goals (SDGs) through impactful storytelling.",
+    description: "Worked on a short film project focusing on storytelling and visual narrative. Contributed to the cause of Sustainable Development Goals (SDGs) through impactful storytelling.",
     media: {
       type: "video",
-      thumbnail: TN1,
+      thumbnail: TN1, // Original Odyssey thumbnail
       videoUrl: "https://youtu.be/lTBJ-OmDeBk",
       duration: "8:07"
     },
     role: "Cinematographer & Editor",
     year: "2024",
     technologies: ["After Effects", "Premiere Pro", "Cinematography", "Color Grading"],
-    highlights: [
-      "Collaborated with creative team"
-    ]
+    highlights: ["Collaborated with creative team"]
   },
   {
     id: "short-film-2",
     title: "Short Film - Timeline Zero",
     type: "Short Film",
     category: "VFX & Post-Production",
-    description: "Second short film project with focus on visual effects and creative storytelling. Handeled the lead role and helped in cinematography.",
+    description: "Second short film project with focus on visual effects and creative storytelling. Handled the lead role and helped in cinematography.",
     media: {
       type: "video",
-      thumbnail: TN3,
+      thumbnail: TN3, // Original Timeline Zero thumbnail
       videoUrl: "https://youtu.be/tg_4ac73V_M?si=IgCaM6sITBFPPDrD",
       duration: "14:23"
     },
@@ -46,8 +44,11 @@ export const creative = [
     description: "Collection of digital artwork and design projects created using Photoshop. Includes poster designs, digital illustrations, and creative compositions.",
     media: {
       type: "gallery",
-      images: [TN1, TN3],
-      mainImage: TN1
+      images: [
+        "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop", // Digital Art placeholder
+        "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop"  // Graphic Design placeholder
+      ],
+      mainImage: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop"
     },
     role: "Digital Artist & Designer",
     year: "2023-2024",
@@ -67,8 +68,8 @@ export const creative = [
     description: "Showcase of VFX work and motion graphics created using After Effects. Includes title sequences, visual effects, and animated graphics.",
     media: {
       type: "video",
-      thumbnail: TN3,
-      videoUrl: "https://youtu.be/-pN4dNxrRB4", // Updated to YouTube link
+      thumbnail: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop", // VFX/Motion placeholder
+      videoUrl: "https://youtu.be/-pN4dNxrRB4",
       duration: "0:08"
     },
     role: "VFX Artist & Motion Graphics Designer",

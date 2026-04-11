@@ -1,8 +1,6 @@
 %-------------------------
 % Resume in Latex
 % Author : Omkar Hundre
-% Based off of: https://github.com/Omkar-Hundre/
-% License : MIT
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -18,29 +16,15 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{fontawesome5} % for icons
+\usepackage{fontawesome5} 
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{} 
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -48,20 +32,16 @@
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
@@ -77,23 +57,12 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
@@ -103,121 +72,92 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
 
 \begin{center}
     {\Huge \scshape Omkar Hundre} \\ \vspace{6pt}
     \small
-    \href{mailto:hundreomkar7@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ hundreomkar7@gmail.com} $|$
-    \href{https://omkarhundre.netlify.app/}{\raisebox{-0.2\height}\faGlobe\ Portfolio} $|$
-    \href{https://www.linkedin.com/in/hundreomkar/}{\raisebox{-0.2\height}\faLinkedin\ LinkedIn} $|$
-    \href{https://github.com/Omkar-Hundre/}{\raisebox{-0.2\height}\faGithub\ GitHub} $|$
-    \raisebox{-0.2\height}\faPhone\ +91 862-580-7046
+    \href{mailto:hundreomkar7@gmail.com}{\faEnvelope\ hundreomkar7@gmail.com} $|$
+    \href{https://omkarhundre.in/}{\faGlobe\ omkarhundre.in} $|$
+    \href{https://www.linkedin.com/in/hundreomkar/}{\faLinkedin\ linkedin.com/in/hundreomkar} $|$
+    \href{https://github.com/Omkar-Hundre/}{\faGithub\ github.com/Omkar-Hundre} $|$
+    \faPhone\ +91 862-580-7046
 \end{center}
 
-
+%-----------SUMMARY-----------
+\section{Professional Summary}
+ \small{Innovative \textbf{Full Stack Engineer} with expertise in building scalable SaaS architectures, real-time distributed systems, and AI-driven automation. Proven track record of managing \textbf{VPS infrastructure}, delivering 10x performance optimizations, in self-led startup projects and digital agency leadership.}
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-    {Jain College Of Engineering, Belagavi (Pursuing)}{Belagavi, Karnataka}
-    {Computer Science And Engineering}{Aug. 2023 -- Till Date}
+    {Jain College Of Engineering, Belagavi}{Aug. 2023 -- Present}
+    {Bachelor of Engineering in Computer Science (Pursuing)}{CGPA: 8.75}
     \resumeSubheading
-      {Kendriya Vidyalaya Karriappa Road, Ahmednagar}{Ahmednagar, Maharashtra}
-      {Matric and 12th}{2020 -- 2022}
+      {Kendriya Vidyalaya K. Road, Ahmednagar}{2020 -- 2022}
+      {Higher Secondary Education (Class XII)}{Percentage: 85.5\%}
   \resumeSubHeadingListEnd
-
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-
     \resumeSubheading
-      {\textbf{Founder \& Full Stack Engineer}}{Sept 2024 -- Present}
-      {\textbf{Autonoms Agency} • Remote}{}
+      {Co-Founder \& Technical Lead}{Sept 2024 -- Present}
+      {Autonoms Agency}{Remote}
       \resumeItemListStart
-        \resumeItem{Co-founded a digital agency delivering modern web solutions and SEO optimization.}
-        \resumeItem{Acquired \textbf{4 clients}, generating \textbf{35K+ revenue} and delivering all projects on time using \textbf{React/Next.js} and \textbf{Node.js}.}
-        \resumeItem{Boosted client \textbf{SEO rankings by 30\%} on average within the first month.}
-        \resumeItem{Built a reusable UI component library, reducing development time by \textbf{50\%}.}
-        \resumeItem{Developed an \textbf{AI-powered quotation tool} for hydraulic industries, cutting estimation time from days to minutes.}
+        \resumeItem{Spearheaded technical roadmap for a digital agency, delivering \textbf{4+ enterprise-grade web solutions} using Next.js and Node.js.}
+        \resumeItem{Architected high-conversion landing pages resulting in \textbf{30\% average boost in organic SEO rankings} for clients.}
+        \resumeItem{Implemented automated CI/CD pipelines and performance monitoring, reducing client site load times by 45\%.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {\textbf{Software Developer (Freelance + Startup Projects)}}{Jan 2023 -- Aug 2024}
-      {\textbf{Remote / Self-driven}}{}
+      {Software Developer (Independent Projects)}{Jan 2023 -- Aug 2024}
+      {Startup Labs}{Remote}
       \resumeItemListStart
-        \resumeItem{Built and deployed software solutions for industrial, healthcare, and education clients.}
-        \resumeItem{Developed \textbf{Zorabase} — a Firebase-like real-time server handling \textbf{1500+ users} with custom authentication.}
-        \resumeItem{Created \textbf{COSEM} — an AI-driven quotation system for hydraulic industries.}
-        \resumeItem{Designed and maintained dashboards, user portals, and JSON-based backend logic.}
+        \resumeItem{Engineered \textbf{ThinkSoul LMS}, optimizing backend logic to handle \textbf{400+ concurrent projects} on a single-core VPS.}
+        \resumeItem{Developed \textbf{COSEM}, an AI-integrated quotation engine for industrial setups, digitizing workflows for 3 major hydraulic firms.}
+        \resumeItem{Collaborated on logistics supply-chain solutions, ranking \textbf{4th nationally} in the InnovateX E-Summit at IIT Bombay.}
       \resumeItemListEnd
-
-    \resumeSubheading
-      {\textbf{Finalist (4th Place) — InnovateX, IIT Bombay E-Summit}}{Mar 2024}
-      {\textbf{IIT Bombay \& Somany Impresa Group}}{}
-      \resumeItemListStart
-        \resumeItem{Ranked \textbf{4th nationally among 2250+ teams} for a tech-driven logistics and supply chain solution.}
-      \resumeItemListEnd
-
   \resumeSubHeadingListEnd
 
-
-
-
-\section{Projects}
+%-----------PROJECTS-----------
+\section{Key Projects}
   \resumeSubHeadingListStart
-
     \resumeProjectHeading
-      {\textbf{\href{https://github.com/Omkar-Hundre}{Zorabase}} $|$ \emph{Python, Redis, Multi-threading, JSON, WebSockets, Firebase Auth}}{}
+      {\textbf{\href{https://thinksoul.in}{ThinkSoul LMS}} $|$ \emph{Next.js 15, Supabase, Tailwind CSS v4, Capacitor, Nginx, PM2}}{}
       \resumeItemListStart
-        \resumeItem{Built a full-fledged Firebase alternative with real-time database, rules engine, and user authentication.}
-        \resumeItem{Server supports up to 2000 concurrent users using multi-threading on dedicated hardware.}
-        \resumeItem{Includes a full admin dashboard for monitoring users, data, and system metrics.}
+        \resumeItem{Architected a \textbf{Multi-tenant SaaS} learning platform featuring real-time document synchronization and interactive Kanban boards.}
+        \resumeItem{Optimized VPS infrastructure using \textbf{Standalone Builds} and \textbf{Nginx Reverse Proxying}, achieving 99.9\% uptime and sub-second page loads.}
+        \resumeItem{Deployed a cross-platform mobile shell with \textbf{Over-the-Air (OTA) updates}, bypassing app store latency for critical system patches.}
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{\href{https://www.youtube.com/watch?v=iWkT6TT8JnM\&feature=youtu.be}{COSEM}} $|$ \emph{Electron.js, Node.js, AI Integration, JSON DB, Custom Auth System}}{}
+      {\textbf{Zorabase Real-time Cloud} $|$ \emph{Python, Redis, Multi-threading, WebSockets, Firebase Auth}}{}
       \resumeItemListStart
-        \resumeItem{Designed a cost estimation tool for hydraulic industries, reducing estimation time from 5–7 days to under 5 minutes.}
-        \resumeItem{Used nested JSON data models and custom logic to handle complex quotation generation.}
-        \resumeItem{Currently deployed in 3 industrial setups with secure login, AI predictions, and dynamic forms.}
+        \resumeItem{Engineered a high-performance Firebase alternative supporting \textbf{1500+ concurrent connections} via optimized multi-threading.}
+        \resumeItem{Implemented a \textbf{real-time security rules engine} and custom WebSocket-based data synchronization for zero-latency updates.}
+        \resumeItem{Built a centralized monitoring dashboard to track system health, active socket connections, and storage metrics.}
       \resumeItemListEnd
 
     \resumeProjectHeading
-      {\textbf{\href{https://www.youtube.com/watch?v=h3A_OyecCoY}{AI-Powered Patient Monitoring System}} $|$ \emph{Python, ML, OpenCV, Speech Synthesis, Sensor Integration}}{}
+      {\textbf{\href{https://www.youtube.com/watch?v=iWkT6TT8JnM}{COSEM Industrial AI}} $|$ \emph{Electron.js, Node.js, AI Integration, JSON DB}}{}
       \resumeItemListStart
-        \resumeItem{Developed a system to monitor patient vitals, movement, and behavior using live camera and sensor data.}
-        \resumeItem{Implemented ML models to train on patient habits and provide real-time spoken feedback and alerts.}
-        \resumeItem{Triggered emergency responses and notifications to caregivers on detecting risky behavior.}
+        \resumeItem{Reduced industrial quote generation time from \textbf{7 days to 5 minutes} using custom complex data models and AI-driven cost prediction.}
+        \resumeItem{Deployed a secure, offline-capable desktop solution for sensitive hydraulic manufacturing environments.}
       \resumeItemListEnd
-
-    \resumeProjectHeading
-      {\textbf{\href{https://omkar-hundre.github.io/bustrackjce/}{Jain Bus Tracking System}} $|$ \emph{Firebase, HTML/CSS/JS, Geolocation APIs, Admin Panel}}{}
-      \resumeItemListStart
-        \resumeItem{Built a multi-role bus tracking platform for college use—students, drivers, and admins.}
-        \resumeItem{Admin panel supports real-time route edits, driver assignments, and bus occupancy updates.}
-        \resumeItem{Live tracking and ETA visible to students; adopted by the college-wide transport system.}
-      \resumeItemListEnd
-
   \resumeSubHeadingListEnd
-
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
-  \begin{itemize}[leftmargin=0.15in, label={}]
+ \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-      \textbf{Languages}{: Python, JavaScript, HTML, CSS, SQL, JSON} \\
-      \textbf{Backend}{: Firebase, Node.js, REST APIs, Redis, Multithreading} \\
-      \textbf{Frontend}{: Tailwind CSS, Bootstrap, GSAP, Vanilla JS, Responsive UI Design} \\
-      \textbf{AI/ML}{: OpenCV, Scikit-learn, MediaPipe, Custom ML Model Integration} \\
-      \textbf{Tools \& Platforms}{: Electron.js, Git, GitHub, Figma, Vercel, Netlify, Replit, Hosting \& Domain Management}
+     \textbf{Languages}{: JavaScript (ES6+), TypeScript, Python, SQL, HTML5, CSS3, C++} \\
+     \textbf{Frameworks}{: Next.js 15+, React 19, Node.js, Capacitor (Mobile), Electron.js, Recharts, BlockNote} \\
+     \textbf{Backend \& Cloud}{: Supabase, PostgreSQL, Redis, Firebase, Nginx, PM2, AWS S3, Capgo (OTA), RESTful APIs} \\
+     \textbf{Tools \& OS}{: Linux (Ubuntu), Git/GitHub, Docker, SEO Analysis Tools, VPS/Domain Management} \\
+     \textbf{Core Competencies}{: SaaS Architecture, Real-time Systems, SEO Optimization, Database Design, Mobile Shell Dev}
     }}
-  \end{itemize}
+ \end{itemize}
 
-
-
-%-------------------------------------------
 \end{document}

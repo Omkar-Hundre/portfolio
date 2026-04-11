@@ -13,8 +13,8 @@ const ACHIEVEMENTS = [
     href: "https://esummit.iitb.ac.in/",
     date: "Mar 2024",
     category: "National Competition",
-    description: "Top 10 out of 2250+ teams nationally. Presented live at IIT Bombay E-Summit.",
-    highlight: "2250+ teams competed"
+    description: "National finalist for architecting a logistics supply-chain solution. Ranked 4th out of 2250+ teams nationally. Presented live at the flagship IIT Bombay E-Summit.",
+    highlight: "Top 4 out of 2250+ teams nationally"
   },
   {
     id: "jce-ideathon-winner",

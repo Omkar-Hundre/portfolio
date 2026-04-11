@@ -36,7 +36,15 @@ import Cosem8 from "../assets/project-demo/Cosem/8.png";
 import health1 from "../assets/project-demo/health/1.jpeg";
 import health2 from "../assets/project-demo/health/2.jpeg";
 import health3 from "../assets/project-demo/health/3.jpeg";
-import health4 from "../assets/project-demo/health/4.jpeg";  
+import health4 from "../assets/project-demo/health/4.jpeg";
+
+// ThinkSoul Screenshots (Add images to src/assets/project-demo/ThinkSoul/ then uncomment these)
+import TS1 from "../assets/project-demo/ThinkSoul/TS1.jpg";
+import TS2 from "../assets/project-demo/ThinkSoul/TS2.jpg";
+import TS3 from "../assets/project-demo/ThinkSoul/TS3.jpg";
+import TS4 from "../assets/project-demo/ThinkSoul/TS4.jpg";
+import TS5 from "../assets/project-demo/ThinkSoul/TS5.jpg";
+import TS6 from "../assets/project-demo/ThinkSoul/TS6.jpg";
 
 import { Icons } from "../Components/ui/icon";
 
@@ -44,11 +52,36 @@ import { Icons } from "../Components/ui/icon";
 
 export const PROJECTS = [
   {
-    id: "zorabase",
-    title: "Zorabase",
+    id: "thinksoul-lms",
+    title: "ThinkSoul LMS",
     screenshots: [],
-    image: [Zora1, Zora2, Zora3], // BusTS images
-    description: "Built a full-fledged Firebase alternative with real-time database, rules engine, and user authentication. Server supports up to 2000 concurrent users using multi-threading on dedicated hardware. Includes a full admin dashboard for monitoring users, data, and system metrics.",
+    // When you add images to assets/project-demo/ThinkSoul, import them above and add here: [TS1, TS2, TS3]
+    image: [TS1, TS2, TS3, TS4, TS5, TS6],
+    description: "Architected a Multi-tenant SaaS learning platform featuring real-time document synchronization and interactive Kanban boards. Optimized VPS infrastructure using Standalone Builds and Nginx Reverse Proxying, achieving 99.9% uptime. Deployed a cross-platform mobile shell with Over-the-Air (OTA) updates.",
+    technologies: [
+      "nextjs",
+      "supabase",
+      "tailwind",
+      "capacitor",
+      "nginx",
+      "pm2",
+      "postgresql"
+    ],
+    liveUrl: "https://thinksoul.in",
+    links: [
+      {
+        type: "Website",
+        href: "https://thinksoul.in",
+        icon: "globe",
+      }
+    ],
+  },
+  {
+    id: "zorabase",
+    title: "Zorabase Real-time Cloud",
+    screenshots: [],
+    image: [Zora1, Zora2, Zora3],
+    description: "Engineered a high-performance Firebase alternative supporting 1500+ concurrent connections via optimized multi-threading. Implemented a real-time security rules engine and custom WebSocket-based data synchronization for zero-latency updates. Built a centralized monitoring dashboard to track system health.",
     technologies: [
       "python",
       "redis",
@@ -63,21 +96,21 @@ export const PROJECTS = [
       {
         type: "Website",
         href: "https://zorabase-demo.vercel.app/",
-        icon: "globe", // changed from <Icons.globe ... />
+        icon: "globe",
       },
       {
         type: "Github",
-        icon: "github", // changed from <Icons.github ... />
+        icon: "github",
         href: "https://github.com/Omkar-Hundre",
       },
     ],
   },
   {
     id: "cosem",
-    title: "COSEM",
+    title: "COSEM Industrial AI",
     screenshots: [],
-    image: [Cosem1, Cosem2, Cosem3, Cosem4, Cosem5, Cosem6, Cosem7, Cosem8], // Use Heimdall images or your own COSEM images
-    description: "Designed a cost estimation tool for hydraulic industries, reducing estimation time from 5–7 days to under 5 minutes. Used nested JSON data models and custom logic to handle complex quotation generation. Currently deployed in 3 industrial setups with secure login, AI predictions, and dynamic forms.",
+    image: [Cosem1, Cosem2, Cosem3, Cosem4, Cosem5, Cosem6, Cosem7, Cosem8],
+    description: "Reduced industrial quote generation time from 7 days to 5 minutes using custom complex data models and AI-driven cost prediction. Deployed a secure, offline-capable desktop solution for sensitive hydraulic manufacturing environments, digitizing workflows for major firms.",
     technologies: [
       "electron",
       "nodejs",
@@ -98,9 +131,9 @@ export const PROJECTS = [
   },
   {
     id: "ai-patient-monitoring",
-    title: "AI-Powered Patient Monitoring System",
+    title: "AI-Powered Patient Monitoring",
     screenshots: [],
-    image: [health1, health2, health3, health4], // Use array for consistency
+    image: [health1, health2, health3, health4],
     description: "Developed a system to monitor patient vitals, movement, and behavior using live camera and sensor data. Implemented ML models to train on patient habits and provide real-time spoken feedback and alerts. Triggered emergency responses and notifications to caregivers on detecting risky behavior.",
     technologies: [
       "python",
@@ -109,7 +142,6 @@ export const PROJECTS = [
       "ai",
       "sensors",
       "speech",
-      "javascript",
     ],
     codeUrl: "https://github.com/Omkar-Hundre/AegisAI",
     liveUrl: "https://youtu.be/h3A_OyecCoY",
@@ -130,7 +162,7 @@ export const PROJECTS = [
     id: "jain-bus-tracking",
     title: "Jain Bus Tracking System",
     screenshots: [],
-    image: [ss1, ss2, ss3, ss4, ss5, ss6], // BusTS images
+    image: [ss1, ss2, ss3, ss4, ss5, ss6],
     description: "Built a multi-role bus tracking platform for college use—students, drivers, and admins. Admin panel supports real-time route edits, driver assignments, and bus occupancy updates. Live tracking and ETA visible to students; adopted by the college-wide transport system.",
     technologies: [
       "firebase",
@@ -138,8 +170,6 @@ export const PROJECTS = [
       "css",
       "javascript",
       "geolocation",
-      "realtime",
-      "admin",
     ],
     codeUrl: "https://github.com/Omkar-Hundre/bustrackjce",
     liveUrl: "https://omkar-hundre.github.io/bustrackjce/",
