@@ -22,6 +22,7 @@ export function ProjectCard({
   links,
   screenshots = [],
   className,
+  onClick,
 }) {
   // Use imagesToShow for slideshow: prefer screenshots, else image
   const imagesToShow = (screenshots && screenshots.length > 0) ? screenshots : image;
@@ -37,14 +38,35 @@ export function ProjectCard({
     return () => clearInterval(interval);
   }, [imagesToShow]);
 
+  const handleCardClick = onClick
+    ? (e) => {
+        // Let footer link clicks pass through normally
+        if (e.target.closest(".project-card-links a")) return;
+        e.preventDefault();
+        onClick();
+      }
+    : undefined;
+
+  // Render image area as div (when modal-enabled) or a (when direct link)
+  const ImageWrapper = onClick ? "div" : "a";
+  const imageWrapperProps = onClick
+    ? { className: cn("block cursor-pointer relative h-40 w-full", className) }
+    : {
+        href: href || "#",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        className: cn("block cursor-pointer relative h-40 w-full", className),
+      };
+
   return (
-    <Card className="flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full">
-      <a
-        href={href || "#"}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn("block cursor-pointer relative h-40 w-full", className)}
-      >
+    <Card
+      className={cn(
+        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full",
+        onClick && "cursor-pointer"
+      )}
+      onClick={handleCardClick}
+    >
+      <ImageWrapper {...imageWrapperProps}>
         {video && (
           <video
             src={video}
@@ -68,7 +90,14 @@ export function ProjectCard({
             )}
           />
         ))}
-      </a>
+
+        {/* Empty state for cards with no images */}
+        {(!imagesToShow || imagesToShow.length === 0) && !video && (
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
+            <span className="text-gray-300 text-4xl">{ }</span>
+          </div>
+        )}
+      </ImageWrapper>
 
       <CardHeader className="px-2">
         <div className="space-y-1">
@@ -102,13 +131,14 @@ export function ProjectCard({
 
       <CardFooter className="px-2 pb-2">
         {links && links.length > 0 && (
-          <div className="flex flex-row flex-wrap items-start gap-1">
+          <div className="flex flex-row flex-wrap items-start gap-1 project-card-links">
             {links.map((link, idx) => (
               <a
                 href={link?.href}
                 key={idx}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 <Badge className="flex gap-2 px-2 py-1 text-[10px] rounded-sm">
                   {/* Render icon component if available, else fallback */}

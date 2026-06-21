@@ -52,19 +52,82 @@ import { Icons } from "../Components/ui/icon";
 
 export const PROJECTS = [
   {
+    id: "rlink-remote-desktop",
+    title: "RLink — Remote Desktop",
+    screenshots: [],
+    image: [],
+    description: "Control your Windows PC from your Android phone — no port forwarding needed. Streams at 60FPS with hardware-accelerated encoding and maps every touch perfectly.",
+    technologies: [
+      "python",
+      "kotlin",
+      "ffmpeg",
+      "websockets",
+      "cloudflare",
+    ],
+    liveUrl: "#",
+    links: [
+      {
+        type: "Github",
+        icon: "github",
+        href: "https://github.com/Omkar-Hundre",
+      }
+    ],
+    details: {
+      overview: "A self-hosted remote desktop setup I built to control my Windows PC from my phone. It streams the entire desktop at 60FPS using hardware-accelerated encoding, captures system audio, and maps touch input with pixel-perfect accuracy. No cloud services, no accounts — connects through a Cloudflare Tunnel and authenticates via QR code pairing.",
+      techStack: [
+        { category: "PC Host", items: "Python, FFmpeg (NVENC), WebSockets, PyAudio, Pynput" },
+        { category: "Android", items: "Kotlin, Jetpack Compose, Media3 (ExoPlayer), CameraX" },
+        { category: "Security", items: "Cloudflare Tunnels (TLS 1.3), HMAC-SHA256, AES-256-GCM" },
+      ],
+      sections: [
+        {
+          title: "Streaming",
+          bullets: [
+            "Screen captured via FFmpeg with NVIDIA NVENC — 60FPS, hardware-encoded, near-zero CPU usage",
+            "Android decodes MPEG-TS packets through a local proxy server feeding into Media3's hardware decoder",
+            "Desktop audio captured from the soundcard via WASAPI loopback, streamed in sync with video",
+          ]
+        },
+        {
+          title: "Input & Control",
+          bullets: [
+            "Touch coordinates scaled with letterbox-aware math to map pixel-perfectly to the PC screen",
+            "Supports tap, double-tap, long-press, two-finger scroll, and a virtual trackpad mode",
+            "Input injected via pynput in an async loop — doesn't block the video pipeline",
+          ]
+        },
+        {
+          title: "Security",
+          bullets: [
+            "No accounts, no cloud, no database — devices pair via QR code (physical proximity only)",
+            "PC generates a 32-byte secret; Android stores it in EncryptedSharedPreferences (Android Keystore)",
+            "Auth uses HMAC-SHA256 with constant-time comparison — immune to timing attacks",
+            "Strict 1-to-1 connection. Revoke access by deleting the key file and restarting",
+          ]
+        },
+        {
+          title: "Extras",
+          bullets: [
+            "Privacy Curtain — blacks out the physical monitor while you control it remotely",
+            "Shows currently playing media (Spotify, VLC) with album art on the Android dashboard",
+            "Runs as a headless background service via PyInstaller — no visible windows or pop-ups",
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: "thinksoul-lms",
     title: "ThinkSoul LMS",
     screenshots: [],
     // When you add images to assets/project-demo/ThinkSoul, import them above and add here: [TS1, TS2, TS3]
     image: [TS1, TS2, TS3, TS4, TS5, TS6],
-    description: "Architected a Multi-tenant SaaS learning platform featuring real-time document synchronization and interactive Kanban boards. Optimized VPS infrastructure using Standalone Builds and Nginx Reverse Proxying, achieving 99.9% uptime. Deployed a cross-platform mobile shell with Over-the-Air (OTA) updates.",
+    description: "Multi-tenant learning management system with live collaborative wikis, Kanban boards, and a strict multi-tier permissions model.",
     technologies: [
       "nextjs",
       "supabase",
       "tailwind",
-      "capacitor",
-      "nginx",
-      "pm2",
+      "aws",
       "postgresql"
     ],
     liveUrl: "https://thinksoul.in",
@@ -75,6 +138,39 @@ export const PROJECTS = [
         icon: "globe",
       }
     ],
+    details: {
+      overview: "A real-time learning management platform I built for startup incubators. It combines live collaborative document editing (like Notion), interactive Kanban boards, and a live admin dashboard to track cohort progress.",
+      techStack: [
+        { category: "Frontend", items: "Next.js 16 (App Router), React 19, Tailwind CSS" },
+        { category: "Backend", items: "Supabase (PostgreSQL, Realtime WebSockets, Auth)" },
+        { category: "Cloud", items: "AWS S3, AWS SES" },
+      ],
+      sections: [
+        {
+          title: "Real-Time Collaboration",
+          bullets: [
+            "Notion-style document editing using block-level storage (@blocknote/react)",
+            "Instant synchronization across users via Supabase Realtime WebSockets",
+            "Drag-and-drop Kanban boards with state updates that push to the backend immediately",
+          ]
+        },
+        {
+          title: "Security & Access",
+          bullets: [
+            "Strict multi-tier RBAC (Global Admins, Group Admins, Members) with isolated permissions",
+            "Defense-in-depth routing using Next.js Middleware to protect unauthenticated routes",
+            "Secure, asynchronous invitation system via AWS SES that doesn't block the UI",
+          ]
+        },
+        {
+          title: "Infrastructure",
+          bullets: [
+            "Direct-to-cloud file uploads using secure, short-lived AWS S3 presigned URLs",
+            "Live admin dashboard that subscribes to Postgres changes to update tracking metrics instantly",
+          ]
+        }
+      ]
+    }
   },
   {
     id: "zorabase",
@@ -107,18 +203,16 @@ export const PROJECTS = [
   },
   {
     id: "cosem",
-    title: "COSEM Industrial AI",
+    title: "COSEM — Industrial Quotation System",
     screenshots: [],
     image: [Cosem1, Cosem2, Cosem3, Cosem4, Cosem5, Cosem6, Cosem7, Cosem8],
-    description: "Reduced industrial quote generation time from 7 days to 5 minutes using custom complex data models and AI-driven cost prediction. Deployed a secure, offline-capable desktop solution for sensitive hydraulic manufacturing environments, digitizing workflows for major firms.",
+    description: "An offline-first desktop app and web portal that reduced industrial quotation time from 7 days to 5 minutes. Deployed in major hydraulic manufacturing firms.",
     technologies: [
       "electron",
-      "nodejs",
-      "json",
-      "ai",
+      "react",
+      "supabase",
       "javascript",
-      "html",
-      "css",
+      "postgresql",
     ],
     liveUrl: "https://youtu.be/iWkT6TT8JnM",
     links: [
@@ -128,6 +222,47 @@ export const PROJECTS = [
         icon: "globe",
       },
     ],
+    details: {
+      overview: "A dual-architecture system built to digitize factory workflows. It features a secure Electron desktop app for factory operators (designed to work offline) and a centralized React portal for management. It handles dynamic cost calculations, nested assemblies, and automated document generation.",
+      techStack: [
+        { category: "Desktop App", items: "Electron, Vanilla JS, HTML5, Tailwind CSS" },
+        { category: "Admin Portal", items: "React (Vite), TypeScript" },
+        { category: "Backend", items: "Supabase (PostgreSQL, Auth, RLS), Cloudinary" },
+      ],
+      sections: [
+        {
+          title: "Calculation Engine",
+          bullets: [
+            "Deeply nested tree navigation to build complex manufacturing assemblies and sub-assemblies",
+            "Dynamic arithmetic engine that automatically calculates material weights and pricing",
+            "Custom formula builder allowing operators to define math relationships without writing code",
+          ]
+        },
+        {
+          title: "Architecture & Data",
+          bullets: [
+            "Local-first architecture using JSON snapshots for offline reliability in factory environments",
+            "Seamless background synchronization to Supabase cloud when internet is available",
+            "Centralized master price list with inline editing and timestamp-based audit tracking",
+          ]
+        },
+        {
+          title: "Security & Access",
+          bullets: [
+            "Granular RBAC (Master Admin, Industry Admin, Operator) backed by Postgres Row Level Security",
+            "Instant remote session revocation — pausing an operator locks them out via cloud heartbeat",
+            "Comprehensive audit logging for API calls, file uploads, and pricing modifications",
+          ]
+        },
+        {
+          title: "Automated Output",
+          bullets: [
+            "Compiles nested assemblies into professional, branded Quotations and Order Acceptances",
+            "Generates both native Excel spreadsheets and PDF reports (via jsPDF)",
+          ]
+        }
+      ]
+    }
   },
   {
     id: "ai-patient-monitoring",

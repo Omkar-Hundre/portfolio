@@ -17,7 +17,7 @@ function Intro() {
                     Omkar here 👋
                   </h1>
                   <h2 className="font-calistoga text-gray-900 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-1 sm:mt-2 leading-relaxed">
-                    Full Stack Engineer | SaaS & Distributed Systems
+                    Full Stack Software Engineer
                   </h2>
                 </div>
 
@@ -25,7 +25,7 @@ function Intro() {
                 <div className="flex-shrink-0">
                   <img
                     src={DP}
-                    alt="Omkar Hundre - Full Stack Engineer"
+                    alt="Omkar Hundre - Full Stack Software Engineer"
                     className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full object-cover border-2 border-gray-200 shadow-lg"
                   />
                 </div>
@@ -43,7 +43,7 @@ function Intro() {
             {/* About */}
             <div className="">
               <p className="mt-3 text-gray-700 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto sm:mx-0">
-                Innovative <span className="font-semibold text-blue-600">Full Stack Engineer</span> with expertise in building scalable <span className="font-semibold text-blue-600">SaaS architectures</span>, real-time distributed systems, and AI-driven automation. Proven track record of managing <span className="font-semibold text-blue-600">VPS infrastructure</span>, delivering <span className="font-semibold text-blue-600">10x performance optimizations</span> through self-led startup projects and digital agency leadership.
+                I build and ship web apps — <span className="font-semibold text-blue-600">frontend to deployment</span>. I run a small agency where I've delivered 6 production apps for clients, handling everything from <span className="font-semibold text-blue-600">React & Next.js</span> code to setting up <span className="font-semibold text-blue-600">VPS, Nginx & PM2</span> myself. Before that, I built industrial software and a learning platform as a freelancer. I like owning the whole process.
               </p>
             </div>
 

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import BlurFade from "./magicui/blur-fade";
 import { ProjectCard } from "./ProjectCard";
+import { ProjectModal } from "./ProjectModal";
 import { PROJECTS } from "../data/Projects";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
 
 function Projects() {
   const [showAll, setShowAll] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   const BLUR_FADE_DELAY = 0.04;
 
   const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, 4);
@@ -83,6 +85,7 @@ function Projects() {
                   image={project.image}
                   screenshots={project.screenshots}
                   links={project.links}
+                  onClick={() => setSelectedProject(project)}
                 />
               </motion.div>
             ))}
@@ -125,6 +128,13 @@ function Projects() {
           </button>
         </motion.div>
       </div>
+
+      {/* Project Detail Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </BlurFade>
   );
 }
