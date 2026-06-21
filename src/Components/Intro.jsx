@@ -55,7 +55,7 @@ function Intro() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-calistoga font-[100] underline transition-colors duration-300 group-hover:text-blue-700 text-sm sm:text-base truncate"
-                    href={Resume}
+                    href="https://drive.google.com/file/d/1EfZjp2gJ52rWNf6zCnouTKgd16EKgJ2M/view?usp=sharing"
                   >
                     Check out my Resume
                   </a>
