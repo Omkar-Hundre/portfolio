@@ -14,7 +14,7 @@ function Intro() {
                 {/* Text content */}
                 <div className="flex-1 min-w-0">
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-900 font-calistoga leading-tight">
-                    Omkar here 👋
+                    Omkar Hundre 👋
                   </h1>
                   <h2 className="font-calistoga text-gray-900 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-1 sm:mt-2 leading-relaxed">
                     Full Stack Software Engineer
@@ -43,7 +43,7 @@ function Intro() {
             {/* About */}
             <div className="">
               <p className="mt-3 text-gray-700 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto sm:mx-0">
-                I build and ship web apps — <span className="font-semibold text-blue-600">frontend to deployment</span>. I run a small agency where I've delivered 6 production apps for clients, handling everything from <span className="font-semibold text-blue-600">React & Next.js</span> code to setting up <span className="font-semibold text-blue-600">VPS, Nginx & PM2</span> myself. Before that, I built industrial software and a learning platform as a freelancer. I like owning the whole process.
+                I build and ship web apps — <span className="font-semibold text-blue-600">frontend to deployment</span>. I run a small agency where I've delivered 6 production apps for clients, handling everything from <span className="font-semibold text-blue-600">React & Next.js</span> code to setting up <span className="font-semibold text-blue-600">VPS, Nginx & PM2</span> myself. Before that, I built industrial software and a learning platform as a freelancer.
               </p>
             </div>
 
@@ -55,7 +55,7 @@ function Intro() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-calistoga font-[100] underline transition-colors duration-300 group-hover:text-blue-700 text-sm sm:text-base truncate"
-                    href="https://drive.google.com/file/d/1EfZjp2gJ52rWNf6zCnouTKgd16EKgJ2M/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1bKsQUfKJ9jELivwmI5pxNbgued82NvGz/view?usp=sharing"
                   >
                     Check out my Resume
                   </a>

@@ -5,16 +5,19 @@ const EXPERIENCE = [
     company: "Autonoms Agency",
     href: "https://autonoms.vercel.app/",
     location: "Remote",
-    title: "Founder & Full Stack Developer",
+    title: "Co-Founder & Full Stack Developer",
     logoUrl: Autonoms,
     start: "Sept 2024",
-    end: "Present",
+    end: "May 2026",
+    duration: "1 Year 9 Months",
     description:
-      "Started this agency to build websites and web apps for small businesses. I handle the full process — talking to clients, writing the code, setting up servers, and shipping it.",
+      "Founded and operated a full-service web development agency delivering production-grade SaaS platforms, offline-first industrial software, real-time web apps, and automated lead generation engines for clients.",
     achievements: [
-      "Built and shipped 6 web apps for clients using React, Next.js, Supabase, and Node.js",
-      "Set up and manage all hosting myself — Ubuntu VPS, Nginx, PM2 — no third-party hosting costs",
-      "Work directly with clients on requirements, feedback cycles, and delivery timelines"
+      "Engineered & delivered COSEM (Industrial Quotation System) deployed in hydraulic manufacturing firms, cutting quote generation time from 7 days to 5 minutes.",
+      "Architected ThinkSoul LMS — a real-time multi-tenant learning platform featuring live Notion-style collaborative wikis and interactive Kanban boards.",
+      "Designed and deployed 6+ client applications using React, Next.js, Electron, Supabase, and Node.js.",
+      "Managed end-to-end cloud & server infrastructure (Ubuntu VPS, Nginx reverse proxy, PM2, AWS S3/SES) ensuring 99.9% uptime with zero third-party hosting overhead.",
+      "Handled end-to-end client consulting, technical architecture, scope definition, feedback iterations, and production deployments."
     ]
   }
 ];

@@ -6,41 +6,56 @@ import { Badge } from "./ui/badge";
 import { Icons } from "./ui/icon";
 import { cn } from "../lib/utils";
 
-function ImageSlideshow({ images, title }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+function ScreenshotsGallery({ images, title }) {
+  const [selectedImage, setSelectedImage] = useState(images[0] || null);
 
   useEffect(() => {
-    if (images.length <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    if (images && images.length > 0) {
+      setSelectedImage(images[0]);
+    }
   }, [images]);
 
+  if (!images || images.length === 0) return null;
+
   return (
-    <div className="relative h-52 sm:h-60 w-full bg-gray-100 overflow-hidden rounded-t-xl">
-      {images.map((src, index) => (
-        <img
-          key={index}
-          src={src}
-          alt={`${title} screenshot ${index + 1}`}
-          className={cn(
-            "absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-700",
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          )}
-        />
-      ))}
+    <div className="flex flex-col h-full gap-3 p-4 sm:p-5 bg-gray-50/80 border-b md:border-b-0 md:border-r border-gray-100 rounded-t-xl md:rounded-tr-none md:rounded-l-xl">
+      {/* Main Preview Image */}
+      <div className="relative flex-1 min-h-[220px] sm:min-h-[280px] md:min-h-[320px] w-full bg-black/5 rounded-lg overflow-hidden border border-gray-200/80 flex items-center justify-center">
+        {selectedImage ? (
+          <img
+            src={selectedImage}
+            alt={`${title} main preview`}
+            className="w-full h-full object-contain object-center"
+          />
+        ) : (
+          <span className="text-xs text-gray-400">No screenshot available</span>
+        )}
+      </div>
+
+      {/* Thumbnails Row */}
       {images.length > 1 && (
-        <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {images.map((_, i) => (
-            <div
-              key={i}
-              className={cn(
-                "w-1.5 h-1.5 rounded-full transition-all duration-300",
-                i === currentIndex ? "bg-white scale-110" : "bg-white/40"
-              )}
-            />
-          ))}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-thin">
+          {images.map((src, index) => {
+            const isSelected = selectedImage === src;
+            return (
+              <button
+                key={index}
+                onClick={() => setSelectedImage(src)}
+                className={cn(
+                  "relative flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-md overflow-hidden border-2 transition-all duration-200 focus:outline-none",
+                  isSelected
+                    ? "border-blue-600 ring-2 ring-blue-600/30 scale-105"
+                    : "border-gray-200 opacity-70 hover:opacity-100 hover:border-gray-300"
+                )}
+              >
+                <img
+                  src={src}
+                  alt={`${title} thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            );
+          })}
         </div>
       )}
     </div>
@@ -82,7 +97,7 @@ export function ProjectModal({ project, isOpen, onClose }) {
     <AnimatePresence>
       {isOpen && project && (
         <motion.div
-          className="fixed inset-0 z-[999] flex items-center justify-center"
+          className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-4 md:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -90,13 +105,13 @@ export function ProjectModal({ project, isOpen, onClose }) {
         >
           {/* Full-screen backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={onClose}
           />
 
-          {/* Centered modal */}
+          {/* Centered modal container */}
           <motion.div
-            className="relative bg-white rounded-xl w-[calc(100%-2rem)] max-w-2xl max-h-[80vh] overflow-hidden shadow-2xl flex flex-col"
+            className="relative bg-white rounded-2xl w-full max-w-5xl h-[85vh] md:h-[580px] overflow-hidden shadow-2xl flex flex-col md:grid md:grid-cols-12"
             initial={{ scale: 0.95, opacity: 0, y: 24 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 24 }}
@@ -106,23 +121,27 @@ export function ProjectModal({ project, isOpen, onClose }) {
             {/* Close button */}
             <button
               onClick={onClose}
-              className={cn(
-                "absolute top-3 right-3 z-10 p-1.5 rounded-full border transition-colors duration-200",
-                hasImages
-                  ? "bg-black/40 hover:bg-black/60 border-white/20 text-white"
-                  : "bg-gray-100 hover:bg-gray-200 border-gray-200 text-gray-600"
-              )}
+              className="absolute top-3 right-3 z-20 p-2 rounded-full bg-gray-100 hover:bg-gray-200 border border-gray-200 text-gray-700 transition-colors duration-200"
             >
               <X className="w-4 h-4" />
             </button>
 
-            {/* Image slideshow */}
-            {hasImages && (
-              <ImageSlideshow images={imagesToShow} title={project.title} />
+            {/* Left Column: Screenshots Gallery */}
+            {hasImages ? (
+              <div className="md:col-span-6 lg:col-span-7 h-full overflow-hidden">
+                <ScreenshotsGallery images={imagesToShow} title={project.title} />
+              </div>
+            ) : (
+              <div className="hidden md:flex md:col-span-4 bg-gray-50 border-r border-gray-100 items-center justify-center p-6 text-gray-400 text-sm">
+                No screenshots available
+              </div>
             )}
 
-            {/* Scrollable content */}
-            <div className="overflow-y-auto flex-1 p-5 sm:p-6 space-y-5">
+            {/* Right Column: Project Details */}
+            <div className={cn(
+              "overflow-y-auto h-full p-5 sm:p-6 space-y-5",
+              hasImages ? "md:col-span-6 lg:col-span-5" : "md:col-span-12"
+            )}>
               {/* Title */}
               <h2 className="font-calistoga text-xl sm:text-2xl text-gray-900 pr-8 leading-tight">
                 {project.title}

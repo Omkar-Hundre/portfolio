@@ -13,6 +13,7 @@ const MilestoneCard = ({
   title,
   subtitle,
   period,
+  duration,
   description,
   achievements,
   location,
@@ -56,8 +57,11 @@ const MilestoneCard = ({
                   )}
                 />
               </div>
-              <div className="text-sm text-gray-600 text-right whitespace-nowrap">
-                {period}
+              <div className="text-right whitespace-nowrap">
+                <div className="text-sm text-gray-600">{period}</div>
+                {duration && (
+                  <div className="text-xs text-gray-500 font-medium">{duration}</div>
+                )}
               </div>
             </div>
             {subtitle && (
@@ -88,7 +92,7 @@ const MilestoneCard = ({
               <div className="text-sm leading-relaxed text-black">
                 <span dangerouslySetInnerHTML={{ 
                   __html: description.replace(
-                    /(\d+\s*(?:clients?|websites?|projects?)|React\/Next\.js|Node\.js|SEO optimization|full-stack development|web solutions)/gi,
+                    /(production-grade SaaS platforms|offline-first industrial software|real-time web apps|automated lead generation engines|\d+\+?\s*(?:clients?|websites?|projects?)|React(?:\/Next\.js)?|Next\.js|Electron|Supabase|Node\.js|SEO optimization|full-stack development|web solutions)/gi,
                     '<span class="font-semibold text-blue-600">$1</span>'
                   )
                 }} />
@@ -97,19 +101,19 @@ const MilestoneCard = ({
               {/* Achievements */}
               {achievements && achievements.length > 0 && (
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-900">Key Achievements</h4>
-                  <ul className="space-y-[-2px]">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-1">Key Achievements</h4>
+                  <ul className="space-y-1">
                     {achievements.map((achievement, index) => {
                       const highlightImportantFacts = (text) => {
                         return text.replace(
-                          /(₹\d+[k|K]?\s*(?:revenue|clients?|projects?|%|days?|time)|\d+%|\$\d+[k|K]?|\d+\+?\s*(?:clients?|projects?|websites?))/g,
+                          /(COSEM \(Industrial Quotation System\)|ThinkSoul LMS|7 days to 5 minutes|6\+ client applications|99\.9% uptime|zero third-party hosting overhead|Ubuntu VPS|Nginx reverse proxy|PM2|AWS S3\/SES|React|Next\.js|Electron|Supabase|Node\.js|₹\d+[k|K]?|\d+%|\$\d+[k|K]?|\d+\+?\s*(?:clients?|projects?|websites?|client applications))/g,
                           '<span class="font-bold text-blue-600">$1</span>'
                         );
                       };
 
                       return (
-                        <li key={index} className="text-sm leading-relaxed text-black">
-                          <span className="text-green-500 text-xl mr-2 mt-1 font-bold">•</span>
+                        <li key={index} className="text-sm leading-relaxed text-black flex items-start">
+                          <span className="text-green-500 text-base mr-2 mt-0.5 font-bold">•</span>
                           <span dangerouslySetInnerHTML={{ 
                             __html: highlightImportantFacts(achievement) 
                           }} />

@@ -22,6 +22,7 @@ export const Experience = () => {
               href={item.href}
               badges={item.badges}
               period={`${item.start} - ${item.end}`}
+              duration={item.duration}
               description={item.description}
               achievements={item.achievements}
               technologies={item.technologies}

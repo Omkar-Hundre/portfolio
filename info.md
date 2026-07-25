@@ -22,7 +22,7 @@ I'm a Computer Science and Engineering student passionate about building Full-St
 
 ## Professional Experience
 
-### Founder & Full Stack Engineer - Autonoms Agency (Sept 2024 - Present)
+### Co-Founder & Full Stack Engineer - Autonoms Agency (Sept 2024 - Present)
 - Co-founded a digital agency specializing in modern web solutions and SEO optimization
 - Acquired 4 clients, generating ₹35K+ revenue
 - Delivered 4 complete website projects with 100% on-time delivery rate

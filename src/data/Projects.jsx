@@ -46,11 +46,18 @@ import TS4 from "../assets/project-demo/ThinkSoul/TS4.jpg";
 import TS5 from "../assets/project-demo/ThinkSoul/TS5.jpg";
 import TS6 from "../assets/project-demo/ThinkSoul/TS6.jpg";
 
+// Additional Project Screenshots
+import TileCRM1 from "../assets/project-demo/TileCRM/1.png";
+import Funnel1 from "../assets/project-demo/Funnel/1.png";
+import OLAI1 from "../assets/project-demo/OLAI/1.jpg";
+import LLMNoApi1 from "../assets/project-demo/LLMNoApi/1.png";
+import LeoCliq1 from "../assets/project-demo/LeoCliq/1.png";
+
 import { Icons } from "../Components/ui/icon";
 
 // import { HomeIcon, NotebookIcon } from "lucide-react";
 
-export const PROJECTS = [
+const ALL_PROJECTS = [
   {
     id: "rlink-remote-desktop",
     title: "RLink — Remote Desktop",
@@ -266,6 +273,7 @@ export const PROJECTS = [
   },
   {
     id: "ai-patient-monitoring",
+    hidden: true,
     title: "AI-Powered Patient Monitoring",
     screenshots: [],
     image: [health1, health2, health3, health4],
@@ -295,6 +303,7 @@ export const PROJECTS = [
   },
   {
     id: "jain-bus-tracking",
+    hidden: true,
     title: "Jain Bus Tracking System",
     screenshots: [],
     image: [ss1, ss2, ss3, ss4, ss5, ss6],
@@ -320,5 +329,162 @@ export const PROJECTS = [
         href: "https://github.com/Omkar-Hundre/bustrackjce",
       },
     ],
+  },
+  {
+    id: "tile-granite-crm",
+    hidden: true,
+    title: "Business Manager - Tile & Granite CRM",
+    screenshots: [],
+    image: [TileCRM1],
+    description: "A comprehensive business management system for creating estimations, quotations, and tracking inventory and khata (outstanding payments).",
+    technologies: ["html", "tailwind", "javascript", "vercel"],
+    liveUrl: "https://demo-tiles-main.vercel.app/",
+    links: [
+      {
+        type: "Website",
+        href: "https://demo-tiles-main.vercel.app/",
+        icon: "globe",
+      }
+    ],
+    details: {
+      overview: "A tailored mobile-responsive web application designed for tile, granite, and marble businesses. Features an intuitive dashboard to create detailed estimates, manage line items, track stock/inventory, and a built-in 'Khata' system for seamless money management and outstanding payment tracking.",
+      techStack: [
+        { category: "Frontend", items: "HTML, Tailwind CSS, JavaScript" },
+        { category: "Deployment", items: "Vercel" }
+      ],
+      sections: [
+        {
+          title: "Core Features",
+          bullets: [
+            "Quotation and estimate generator with line items",
+            "Khata system for tracking outstanding payments",
+            "Mobile-first, user-friendly interface",
+            "Inventory and business analytics dashboard",
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: "funnel-lead-engine",
+    hidden: true,
+    title: "Funnel — Lead Generation Engine",
+    screenshots: [],
+    image: [Funnel1],
+    description: "Automated lead discovery and enrichment pipeline that scrapes, classifies, scores, and deduplicates business leads 24/7.",
+    technologies: ["python", "playwright", "pandas", "gemini"],
+    liveUrl: "#",
+    links: [],
+    details: {
+      overview: "A continuous lead-generation engine with three layers: discovery (structured web scraping), enrichment (contact extraction and scoring via AI), and pipeline (deduplication, Excel/Sheets sync). Runs as a persistent background service.",
+      techStack: [
+        { category: "Backend & Automation", items: "Python, Playwright, Pandas" },
+        { category: "AI Processing", items: "Gemini API" }
+      ],
+      sections: [
+        {
+          title: "Features",
+          bullets: [
+            "24/7 continuous lead discovery",
+            "AI-powered lead scoring and classification",
+            "Automatic deduplication and Excel sync",
+            "Smart business categorization",
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: "olai",
+    hidden: true,
+    title: "OLAI — AI-Native Automation",
+    screenshots: [],
+    image: [OLAI1],
+    description: "Visual node-based automation platform where users build AI workflows by connecting modular blocks — no code required.",
+    technologies: ["typescript", "nodejs", "python", "ml"],
+    liveUrl: "#",
+    links: [],
+    details: {
+      overview: "A zero-code automation playground with a dual-file delivery system: JSON config for frontend node generation and TypeScript handlers for custom backend logic. Supports Python, PowerShell, Bash, and Node.js runtimes.",
+      techStack: [
+        { category: "Core", items: "TypeScript, Node.js, Python, AI/ML" }
+      ],
+      sections: [
+        {
+          title: "Highlights",
+          bullets: [
+            "Visual node-based workflow builder",
+            "Zero-code — JSON config + TypeScript handlers",
+            "Multi-runtime support (Python, Bash, Node.js)",
+            "Registered under MSME Udyam",
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: "llm-noapi-automation",
+    hidden: true,
+    title: "LLM No-API Automation",
+    screenshots: [],
+    image: [LLMNoApi1],
+    description: "Browser automation framework that operates LLMs and messaging platforms without official APIs — WhatsApp, Gmail, and more.",
+    technologies: ["nodejs", "puppeteer", "restapi", "websockets"],
+    liveUrl: "#",
+    links: [],
+    details: {
+      overview: "A modular plugin system with shared browser management and a unified REST API. Automates WhatsApp messaging, Gmail operations, and other platforms through browser-level interaction — no API keys required.",
+      techStack: [
+        { category: "Framework", items: "Node.js, Puppeteer, REST API, WebSockets" }
+      ],
+      sections: [
+        {
+          title: "Capabilities",
+          bullets: [
+            "Modular plugin architecture",
+            "WhatsApp + Gmail automation",
+            "Unified REST API for all plugins",
+            "Shared browser instance management",
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: "leocliq",
+    hidden: true,
+    title: "LeoCliq",
+    screenshots: [],
+    image: [LeoCliq1],
+    description: "Full-stack mobile application with a creator portal, push notifications, and Supabase backend — built for content creators and their communities.",
+    technologies: ["reactnative", "supabase", "postgresql"],
+    liveUrl: "https://youtube.com/shorts/I9k_-uUl0uE?feature=share",
+    links: [
+      {
+        type: "Website",
+        href: "https://youtube.com/shorts/I9k_-uUl0uE?feature=share",
+        icon: "globe",
+      }
+    ],
+    details: {
+      overview: "A mobile-first platform connecting content creators with their communities. Features a dedicated creator portal, real-time push notifications, and a scalable Supabase backend with Row Level Security.",
+      techStack: [
+        { category: "Mobile App", items: "React Native" },
+        { category: "Backend", items: "Supabase, PostgreSQL, Push Notifications" }
+      ],
+      sections: [
+        {
+          title: "Key Features",
+          bullets: [
+            "Creator portal with analytics dashboard",
+            "Real-time push notification system",
+            "Supabase RLS for data isolation",
+            "Cross-platform mobile deployment",
+          ]
+        }
+      ]
+    }
   }
 ];
+
+export const PROJECTS = ALL_PROJECTS.filter((p) => !p.hidden);
