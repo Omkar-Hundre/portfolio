@@ -396,27 +396,47 @@ const ALL_PROJECTS = [
   },
   {
     id: "olai",
-    hidden: true,
-    title: "OLAI — AI-Native Automation",
+    hidden: false,
+    title: "OLAI — Multi-Agent AI Orchestration Platform",
     screenshots: [],
     image: [OLAI1],
-    description: "Visual node-based automation platform where users build AI workflows by connecting modular blocks — no code required.",
-    technologies: ["typescript", "nodejs", "python", "ml"],
-    liveUrl: "#",
-    links: [],
+    video: "https://youtu.be/wNOn777NxqQ",
+    description: "Enterprise-grade visual node-based multi-agent orchestration platform with prompt-to-workflow engine, zero-cost browser inferencing, and instant production Node.js export.",
+    technologies: ["typescript", "nodejs", "python", "react", "playwright", "fastify", "tailwind"],
+    liveUrl: "https://olai-orchestration.netlify.app",
+    links: [
+      {
+        type: "Live App",
+        icon: "external",
+        href: "https://olai-orchestration.netlify.app",
+      },
+      {
+        type: "Github",
+        icon: "github",
+        href: "https://github.com/Omkar-Hundre/Olai.git",
+      },
+      {
+        type: "Watch Video",
+        icon: "youtube",
+        href: "https://youtu.be/wNOn777NxqQ",
+      }
+    ],
     details: {
-      overview: "A zero-code automation playground with a dual-file delivery system: JSON config for frontend node generation and TypeScript handlers for custom backend logic. Supports Python, PowerShell, Bash, and Node.js runtimes.",
+      overview: "OLAI (Open Line AI) is a prompt-driven multi-agent orchestration platform designed to streamline AI workflow creation. It features 50+ specialized nodes, a zero-cost browser automation engine (LLM_NOAPI_Automation), local model execution via Ollama and LM Studio, and instant Node.js microservice export.",
       techStack: [
-        { category: "Core", items: "TypeScript, Node.js, Python, AI/ML" }
+        { category: "Frontend", items: "React 18, TypeScript, Vite, Tailwind CSS, Zustand" },
+        { category: "Backend", items: "Node.js, Fastify, Express, Prisma, SQLite" },
+        { category: "Inferencing & Automation", items: "Playwright (No-API Engine), Gemini 1.5 Pro, Claude 3.5, Ollama, LM Studio" }
       ],
       sections: [
         {
-          title: "Highlights",
+          title: "Core Innovations",
           bullets: [
-            "Visual node-based workflow builder",
-            "Zero-code — JSON config + TypeScript handlers",
-            "Multi-runtime support (Python, Bash, Node.js)",
-            "Registered under MSME Udyam",
+            "Prompt-to-Workflow Engine: Converts natural language into functional node graphs automatically",
+            "Zero-Cost No-API Engine: Browser-driven automation for ChatGPT, Gemini & Claude without API fees",
+            "Local Model Privacy: Seamless connection to offline Ollama and LM Studio instances",
+            "Instant Application Exporter: Compiles canvas graphs into production-ready Node.js code packages",
+            "Live Production Demo hosted on Netlify: olai-orchestration.netlify.app"
           ]
         }
       ]
